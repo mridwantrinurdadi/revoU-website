@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/Home-Page.css">
+    <link rel="icon" type="image/png" href="/Assets/logorevoU.png">
+    <title>Home Page</title>
+  </head>
+  <body>
+
+      <header class="header-wraper">
+          <img src="https://storage.googleapis.com/danacita-website-v3-prd/website_v3/images/Revou-alasan.original.png" class="logo" width="70" height="70" alt="">
+            <div class="menu">
+                <button><a href="#">Home</a></button>
+                <button><a href="/Profile.html">Our Profile</a></button>
+                <button><a href="#">Portfolio</a></button>
+                <button><a href="#">Message Us</a></button>
+            </div>
+      </header>
+    
+      <header>
+        <h1>Hi <span id="nama"></span>, Welcome To Website</h1>
+        <p>Ini adalah Website Latihan Pertama</p>
+      </header>
+      
+      <script>
+        var name = prompt("Masukan nama kamu");
+        document.getElementById("nama").innerText = name;
+      </script>
+      
+      <br><br>
+
+      <div class="coding">
+        <img class="content-img" src="/Assets/Coding.jpg" alt="Coding">
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+      </div>
+      
+      <script>
+        // Mengambil elemen gambar dan tombol
+        var img = document.querySelector('.content-img');
+        var prevBtn = document.querySelector('.prev-btn');
+        var nextBtn = document.querySelector('.next-btn');
+        
+        // Membuat array dengan beberapa sumber gambar
+        var imgSources = ['/Assets/hero1.jpg', '/Assets/hero2.jpg', '/Assets/Coding2.jpg', '/Assets/hero3.jpg','/Assets/hero4.jpg' ];
+        
+        // Menentukan indeks gambar saat ini
+        var currentIndex = 0;
+        
+        // Fungsi untuk mengganti gambar
+        function changeImage() {
+          img.src = imgSources[currentIndex];
+        }
+        
+        // Fungsi untuk menggeser ke gambar sebelumnya
+        function prevImage() {
+          currentIndex = (currentIndex - 1 + imgSources.length) % imgSources.length;
+          changeImage();
+        }
+        
+        // Fungsi untuk menggeser ke gambar berikutnya
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % imgSources.length;
+          changeImage();
+        }
+        
+        // Menambahkan event listener ke tombol geser
+        prevBtn.addEventListener('click', prevImage);
+        nextBtn.addEventListener('click', nextImage);
+        
+        // Menjalankan fungsi untuk mengganti gambar setiap 3 detik
+        setInterval(nextImage, 1000);
+      </script>
+      
+      
+      <br><br>
+      
+      <!-- Garis Bawah/Garis Pembatas -->
+      <div class="border"></div>
+
+<!-- Header -->
+      <header>
+        <h1>Our Headquarter</h1>
+      </header>
+      <br>
+
+<!-- Content Setelah Our Headquarter, Ketiga gambar Jakarta, Bandung, Surabaya -->
+      <div class="image-container">
+        <div class="image">
+          <img src="/Assets/Jakarta.png" alt="Jakarta">
+          <div class="name">Jakarta</div>
+        </div>
+        <div class="image">
+          <img src="/Assets/Bandung.jpg" alt="Bandung">
+          <div class="name">Bandung</div>
+        </div>
+        <div class="image">
+          <img src="/Assets/Surabaya.png" alt="Surabaya">
+          <div class="name">Surabaya</div>
+        </div>
+      </div>
+      <br><br>
+      <!-- Garis Bawah/Garis Pembatas -->
+      <div class="border"></div>
+
+        <header>
+          <h1>About RevoU</h1>
+          <p>RevoU ini adalah sekolah online (EdTech) yang membekali para murid dengan 
+            keterampilan digital yang lagi in-demand di zaman industri teknologi 4.0 saat 
+            ini, Sampai sekarang, RevoU udah berhasil bantuin 3000+ alumni utk mendapatkan 
+            karir impian, maupun mengembangkan bisnis mereka di bidang digital!</p>
+            <h2>Apa Bedanya RevoU dengan Sekolah lain?</h2>
+            <ol type="1">
+              <li><strong>Kurikulum super komplit.</strong> Kamu bakal belajar semua skills technical + 
+                behavioural yang dibutuhin saat ini.</li>
+              <li><strong>Langsung Praktik Tiap Minggu</strong> Kamu bakal dapatin teori + praktik lewat 
+                individual assignment dan group project.</li>
+              <li><strong>Bisa Ikut Dari Kota Mana pun</strong>Karena full 100% online</li>
+              <li><strong>Bisa ikut kelas sambil kerja</strong>Karena semua kelasnya di luar jam kerja! Mulai 
+                jam 7-9 malam.</li>
+              <li><strong>Networking dengan instruktur-instruktor paling top di Asia Tenggara.</strong>
+              Bisa ngobrol + belajar langsung dari ahlinya</li>
+              <li><strong>Ngerjain proyek layaknya di dunia professional</strong>Punya kesempatan pemanasan kerja dan bangun portofolio!</li>
+              <li><strong>Lulus dapet sertifikat, bahkan bisa dapat kerja</strong>Bakal kita bantuin bener-bener dari A-Z untuk dapat kerjaan!</li>
+              <li><strong>Bayarnya bisa dicicil</strong>Jadi gak terlalu berat untuk kamu yang bener-bener mau belajar!</li>
+            </ol>
+            <h2>Visi Dan Misi</h2>
+            <ol>
+              <li>Visi : menjadi platform edukasi teknologi terdepan yang mendorong akses literasi 
+                digital yang lebih luas untuk semua.</li>
+              <li>Misi : untuk mengakselerasi transisi Indonesia menuju dunia digital melalui pendidikan 
+                teknologi yang mentransformasi kehidupan.</li>
+            </ol>
+        </header>
+        
+      
+      <br>
+
+      <!-- Garis Bawah/Garis Pembatas -->
+      <div class="border"></div>
+
+      <header>
+        <h1>Message Us</h1>
+      </header>
+      <br>
+
+      <div class="form-section">
+        <form name="message-form" id="message-form">
+          <label for="full-name">Nama :</label>
+          <input placeholder="Name" type="text" name="full-name" id="full-name">
+      
+          <label for="birth-date">Tanggal Lahir :</label>
+          <input type="date" name="birth-date" id="birth-date">
+      
+          <label for="gender">Jenis Kelamin :</label>
+          <div class="radio-buttons">
+            <input type="radio" name="gender" id="male" value="Pria">
+            <label for="male">Pria</label>
+            <input type="radio" name="gender" id="female" value="Wanita">
+            <label for="female">Wanita</label>
+          </div>
+      
+          <label for="messages">Pesan :</label>
+          <textarea placeholder="Pesan" name="messages" id="messages"></textarea>
+      
+          <input type="submit" value="Submit">
+        </form>
+      
+        <script>
+          const form = document.getElementById("message-form");
+      
+          form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            if(validateForm()) {
+              updateOutput();
+            }
+          });
+      
+          function validateForm() {
+            const name = document.forms["message-form"]["full-name"].value;
+            const birthDate = document.forms["message-form"]["birth-date"].value;
+            const gender = document.forms["message-form"]["gender"].value;
+            const messages = document.forms["message-form"]["messages"].value;
+      
+            if (name == "") {
+              alert("Nama harus diisi");
+              return false;
+            }
+      
+            if (birthDate == "") {
+              alert("Tanggal Lahir harus diisi");
+              return false;
+            }
+      
+            if (gender == "") {
+              alert("Jenis Kelamin harus dipilih");
+              return false;
+            }
+      
+            if (messages == "") {
+              alert("Pesan harus diisi");
+              return false;
+            }
+      
+            return true;
+          }
+      
+          function updateOutput() {
+            const outputName = document.getElementById("sender-full-name");
+            const outputBirthDate = document.getElementById("sender-birth-date");
+            const outputGender = document.getElementById("sender-gender");
+            const outputMessage = document.getElementById("sender-message");
+      
+            outputName.innerHTML = document.forms["message-form"]["full-name"].value;
+            outputBirthDate.innerHTML = document.forms["message-form"]["birth-date"].value;
+            outputGender.innerHTML = document.forms["message-form"]["gender"].value;
+            outputMessage.innerHTML = document.forms["message-form"]["messages"].value;
+          }
+        </script>
+      
+        <div class="form-output">
+          <p>Nama :<span id="sender-full-name"></span></p>
+          <p>Tanggal Lahir :<span id="sender-birth-date"></span></p>
+          <p>Jenis Kelamin :<span id="sender-gender"></span></p>
+          <p>Pesan :<span id="sender-message"></span></p>
+        </div>
+      </div>
+      
+    <br><br>
+    <!-- Garis Bawah/Garis Pembatas -->
+    <div class="border"></div>
+
+        <footer class="footer-container">
+          <p>&copy; Create By Mochamad Ridwan Tri NurDadi Since 2023</p>
+        </footer>
+
+  </body>
+</html>
